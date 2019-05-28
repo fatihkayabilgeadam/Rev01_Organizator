@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Organizer_Entitiy.Events>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Etkinlikler</h2>
+
+<p>
+    @Html.ActionLink("+ Yeni Etkinlik", "AddEvent")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Etkinlik Adı
+        </th>
+        <th>
+            Oluşturan Kişi
+        </th>
+        <th>
+            Etkinlik Tarihi ve Saati
+        </th>
+        <th>
+            Başvuru Tarihi ve Saati
+        </th>
+        <th>
+            Açıklama
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("Sil", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
