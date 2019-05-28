@@ -24,6 +24,7 @@ namespace Organizer_UI.Controllers
             Events emptyEvent = new Events();
             return View(emptyEvent); 
         }
+
         [HttpPost]
         public ActionResult AddEvent(Events filledEvent)
         {
