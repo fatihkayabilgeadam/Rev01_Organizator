@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D540FA86-E1B4-44D6-AE2A-6391F3BE2553}</ProjectGuid>
+    <ProjectGuid>{9C849394-6BD2-4DBC-B74E-F02B1FA26719}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Organizer_Entitiy</RootNamespace>
@@ -52,7 +52,6 @@
     <Compile Include="Events.cs" />
     <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sysdiagrams.cs" />
     <Compile Include="UserEvent.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>

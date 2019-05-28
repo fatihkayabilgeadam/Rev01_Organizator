@@ -1,4 +1,5 @@
 namespace Organizer_DAL
+
 {
     using System;
     using System.Data.Entity;
@@ -15,7 +16,6 @@ namespace Organizer_DAL
 
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Messages> Messages { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<UserEvent> UserEvent { get; set; }
         public virtual DbSet<Users> Users { get; set; }
 
@@ -25,6 +25,12 @@ namespace Organizer_DAL
                 .HasMany(e => e.UserEvent)
                 .WithRequired(e => e.Events)
                 .HasForeignKey(e => e.EventID)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<Users>()
+                .HasMany(e => e.Events)
+                .WithRequired(e => e.Users)
+                .HasForeignKey(e => e.OwnerID)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Users>()

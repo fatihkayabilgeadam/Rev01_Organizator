@@ -20,19 +20,21 @@ namespace Organizer_Entitiy
         [StringLength(50)]
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(50)]
-        public string Owner { get; set; }
+        public int OwnerID { get; set; }
 
         public int Capacity { get; set; }
 
         public DateTime EventDate { get; set; }
 
-        public int? CategoryID { get; set; }
-
         public DateTime ApplicationDate { get; set; }
 
         public string Description { get; set; }
+
+        public int? CategoryID { get; set; }
+
+        public string Picture { get; set; }
+
+        public virtual Users Users { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserEvent> UserEvent { get; set; }

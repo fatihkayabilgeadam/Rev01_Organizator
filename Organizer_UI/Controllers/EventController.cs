@@ -31,6 +31,16 @@ namespace Organizer_UI.Controllers
             EventBLL.AddEvent(filledEvent);
             return RedirectToAction("Index");
         }
+        public ActionResult GetMyEvents()
+        {
+            Users user = Session["User"] as Users;
+               
+            List<Events> myEvents = EventBLL.GetMyEvents(user.ID);
+
+            return View(myEvents);
+        }
+
+
 
 
     }

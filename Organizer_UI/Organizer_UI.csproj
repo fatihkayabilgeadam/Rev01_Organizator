@@ -209,8 +209,9 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\User\AddUser.cshtml" />
     <Content Include="Views\Event\Index.cshtml" />
-    <Content Include="Views\Event\AddEvent.cshtml" />
     <Content Include="Views\Home\Hata.cshtml" />
+    <Content Include="Views\Event\GetMyEvents.cshtml" />
+    <Content Include="Views\Event\AddEvent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -238,7 +239,7 @@
       <Name>Organizer_DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Organizer_Entitiy\Organizer_Entitiy.csproj">
-      <Project>{d540fa86-e1b4-44d6-ae2a-6391f3be2553}</Project>
+      <Project>{9c849394-6bd2-4dbc-b74e-f02b1fa26719}</Project>
       <Name>Organizer_Entitiy</Name>
     </ProjectReference>
   </ItemGroup>

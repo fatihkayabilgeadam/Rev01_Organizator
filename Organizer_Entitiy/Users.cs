@@ -11,6 +11,7 @@ namespace Organizer_Entitiy
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Users()
         {
+            Events = new HashSet<Events>();
             Messages = new HashSet<Messages>();
             Messages1 = new HashSet<Messages>();
             UserEvent = new HashSet<UserEvent>();
@@ -29,6 +30,9 @@ namespace Organizer_Entitiy
         [Required]
         [StringLength(10)]
         public string Password { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Events> Events { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Messages> Messages { get; set; }

@@ -21,6 +21,18 @@ namespace Organizer_BLL
             dataContext.Events.Add(filledEvent);
             dataContext.SaveChanges();
         }
+        public static List<Events> GetMyEvents (int ownerid)
+        {
+            List<Events> liste = dataContext.Events.Where(x => x.OwnerID == ownerid).ToList();
+            return liste;
+        }
+    
+             
+        //public static int Topla(int a,int b)
+        //{
+        //    int c= a + b;
+        //    return c;
+        //}
 
 
     }
